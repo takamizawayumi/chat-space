@@ -6,7 +6,8 @@
 |name|string|null: false|
 ### Association
 - has_many :tweets
-- has_many :groups
+- has_many :user_groups
+- has_many :groups, through: :user_groups
 
 ## tweetsテーブル
 |Column|Type|Options|
@@ -26,10 +27,11 @@
 |text|text|null: false|
 |tweet_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :tweet
-- belongs_to :user
+- has_many :tweets
+- has_many :user_groups
+- has_many :users, through: :user_groups
 
-## user groupテーブル
+## user_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
