@@ -14,18 +14,15 @@
 |------|----|-------|
 |image|text||
 |text|text||
-|user_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :group
+- belongs_to :group_id
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|text|text|null: false|
-|tweet_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :tweets
 - has_many :user_groups
@@ -34,8 +31,8 @@
 ## user_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
