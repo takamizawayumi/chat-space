@@ -12,10 +12,9 @@
         %li.cog-icon
   .group_list
     - current_user.groups.each do |group|
-    .group
-      = link_to '#' do
-        .Group__name
-          = group.name
-        .Group__message
-          メッセージはまだありません
-          
+      .Group
+        = link_to '#' do
+          .Group__name
+            = group.name
+          .Group__message
+            メッセージはまだありません
