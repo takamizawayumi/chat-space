@@ -54,7 +54,9 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
-
+group :production do
+  gem 'unicorn', '5.4.1'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
@@ -62,8 +64,7 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
 gem 'jquery-rails'
-group :production do
-  gem 'unicorn', '5.4.1'
-end
+
